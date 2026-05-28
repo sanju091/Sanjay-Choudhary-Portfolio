@@ -3,174 +3,589 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sanjay Choudhary | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <title>Sanjay Choudhary | Software Developer</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
     }
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #f4f7f9;
-      color: #333;
-      line-height: 1.6;
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#0f172a;
+      color:white;
+      overflow-x:hidden;
     }
 
-    header {
-      background: #2c3e50;
-      color: #fff;
-      padding: 2rem 0;
-      text-align: center;
+    a{
+      text-decoration:none;
+      color:white;
     }
 
-    header h1 {
-      font-size: 2.5rem;
+    /* NAVBAR */
+
+    nav{
+      width:100%;
+      padding:20px 10%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:#111827;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      box-shadow:0 2px 10px rgba(0,0,0,0.3);
     }
 
-    header p {
-      font-size: 1.1rem;
+    .logo{
+      font-size:28px;
+      font-weight:700;
+      color:#38bdf8;
     }
 
-    section {
-      max-width: 1000px;
-      margin: auto;
-      padding: 2rem;
+    nav ul{
+      display:flex;
+      gap:30px;
+      list-style:none;
     }
 
-    h2 {
-      color: #2c3e50;
-      margin-bottom: 1rem;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 0.5rem;
+    nav ul li a{
+      transition:0.3s;
+      font-weight:500;
     }
 
-    .info p, .project, .contact p {
-      margin-bottom: 0.8rem;
+    nav ul li a:hover{
+      color:#38bdf8;
     }
 
-    .project {
-      padding: 1rem;
-      background: #fff;
-      border-radius: 6px;
-      margin-bottom: 1rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:50px 10%;
+      background:linear-gradient(to right,#0f172a,#1e293b);
     }
 
-    ul {
-      padding-left: 1.2rem;
-      margin-bottom: 1rem;
+    .hero-container{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:60px;
+      flex-wrap:wrap;
     }
 
-    .contact a {
-      color: #2c3e50;
-      text-decoration: none;
+    .hero-text{
+      flex:1;
+      min-width:300px;
     }
 
-    footer {
-      background: #2c3e50;
-      color: #fff;
-      text-align: center;
-      padding: 1rem 0;
-      margin-top: 2rem;
+    .hero-text h3{
+      font-size:24px;
+      color:#38bdf8;
     }
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.8rem;
+    .hero-text h1{
+      font-size:60px;
+      margin:10px 0;
+    }
+
+    .hero-text h2{
+      font-size:30px;
+      color:#cbd5e1;
+      margin-bottom:20px;
+    }
+
+    .hero-text p{
+      color:#94a3b8;
+      line-height:1.8;
+      margin-bottom:25px;
+      max-width:600px;
+    }
+
+    .hero-buttons{
+      margin-top:30px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:14px 30px;
+      border-radius:30px;
+      font-weight:600;
+      margin-right:15px;
+      transition:0.3s;
+    }
+
+    .btn-primary{
+      background:#38bdf8;
+      color:#0f172a;
+    }
+
+    .btn-primary:hover{
+      background:#0ea5e9;
+      transform:translateY(-5px);
+    }
+
+    .btn-outline{
+      border:2px solid #38bdf8;
+      color:#38bdf8;
+    }
+
+    .btn-outline:hover{
+      background:#38bdf8;
+      color:#0f172a;
+    }
+
+    .hero-image{
+      flex:1;
+      text-align:center;
+      min-width:300px;
+    }
+
+    .hero-image img{
+      width:350px;
+      max-width:100%;
+      border-radius:20px;
+      border:5px solid #38bdf8;
+      box-shadow:0 0 30px rgba(56,189,248,0.4);
+    }
+
+    /* SECTION */
+
+    section{
+      padding:80px 10%;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:42px;
+      margin-bottom:50px;
+      color:#38bdf8;
+    }
+
+    /* ABOUT */
+
+    .about{
+      text-align:center;
+      color:#cbd5e1;
+      font-size:18px;
+      line-height:1.8;
+      max-width:900px;
+      margin:auto;
+    }
+
+    /* SKILLS */
+
+    .skills-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:25px;
+    }
+
+    .skill-card{
+      background:#1e293b;
+      padding:30px;
+      border-radius:15px;
+      text-align:center;
+      transition:0.3s;
+      box-shadow:0 5px 20px rgba(0,0,0,0.3);
+    }
+
+    .skill-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .skill-card i{
+      font-size:45px;
+      color:#38bdf8;
+      margin-bottom:15px;
+    }
+
+    /* PROJECTS */
+
+    .projects-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+    }
+
+    .project-card{
+      background:#1e293b;
+      padding:30px;
+      border-radius:15px;
+      transition:0.3s;
+      box-shadow:0 5px 20px rgba(0,0,0,0.3);
+    }
+
+    .project-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .project-card h3{
+      color:#38bdf8;
+      margin-bottom:15px;
+    }
+
+    .project-card p{
+      color:#cbd5e1;
+      margin-bottom:15px;
+    }
+
+    /* EDUCATION */
+
+    .edu-card{
+      background:#1e293b;
+      padding:30px;
+      border-radius:15px;
+      text-align:center;
+      color:#cbd5e1;
+      max-width:700px;
+      margin:auto;
+    }
+
+    /* CONTACT */
+
+    .contact{
+      text-align:center;
+    }
+
+    .contact p{
+      margin:15px 0;
+      font-size:18px;
+      color:#cbd5e1;
+    }
+
+    .social-icons{
+      margin-top:30px;
+    }
+
+    .social-icons a{
+      display:inline-block;
+      width:55px;
+      height:55px;
+      line-height:55px;
+      background:#1e293b;
+      margin:10px;
+      border-radius:50%;
+      font-size:22px;
+      transition:0.3s;
+    }
+
+    .social-icons a:hover{
+      background:#38bdf8;
+      color:#0f172a;
+      transform:translateY(-5px);
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#111827;
+      padding:25px;
+      text-align:center;
+      color:#94a3b8;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:900px){
+
+      .hero-container{
+        flex-direction:column-reverse;
+        text-align:center;
       }
-      section {
-        padding: 1rem;
+
+      .hero-text h1{
+        font-size:45px;
+      }
+
+      nav{
+        flex-direction:column;
+        gap:15px;
+      }
+
+      nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
       }
     }
+
   </style>
 </head>
+
 <body>
 
-  <header>
-    <h1>Sanjay Choudhary</h1>
-    <p>3rd Year B.Tech Undergraduate | LIET College</p>
-  </header>
+  <!-- NAVBAR -->
 
-  <section class="info">
-    <h2>Objective</h2>
-    <p>Aspiring software developer and tech enthusiast with a strong foundation in computer applications. Passionate about building web-based solutions, exploring emerging technologies, and continuously improving coding skills. Seeking opportunities to gain practical experience and contribute meaningfully to the tech community.</p>
-  </section>
+  <nav>
 
-  <section>
-    <h2>Education</h2>
-    <p><strong>B.Tech</strong><br/>
-    LIET College , Alwar (2022–2026)<br/>
-    Current CGPA: 7.9/10</p>
-  </section>
+    <div class="logo">Sanjay Choudhary</div>
 
-  <section>
-    <h2>Projects</h2>
-
-    <div class="project">
-      <h3>Online Portfolio Website</h3>
-      <p>Created a personal portfolio using HTML, CSS, and JavaScript.</p>
-      <p><strong>Tech Stack:</strong> HTML, CSS, JavaScript</p>
-    </div>
-
-    <div class="project">
-      <h3>Library Management System</h3>
-      <p>Desktop app to manage book issuance and returns using Python and SQLite.</p>
-      <p><strong>Tech Stack:</strong> Python, SQLite</p>
-    </div>
-
-    <div class="project">
-      <h3>To-Do List Web App</h3>
-      <p>CRUD-based to-do list with responsive UI and local storage.</p>
-      <p><strong>Tech Stack:</strong> HTML, CSS, JavaScript</p>
-    </div>
-  </section>
-
-  <section>
-    <h2>Skills</h2>
     <ul>
-      <li><strong>Languages:</strong> Html, Java, JavaScript, C,Css</li>
-      <li><strong>Web:</strong> HTML5, CSS3, React (Basics)</li>
-      <li><strong>Databases:</strong> MySQL, SQLite</li>
-      <li><strong>Tools:</strong> Git, GitHub, VS Code, Linux (Basics)</li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
+
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-container">
+
+      <div class="hero-text">
+
+        <h3>Hello, I'm</h3>
+
+        <h1>Sanjay Choudhary</h1>
+
+        <h2>Software Developer & QA Engineer</h2>
+
+        <p>
+          B.Tech graduate passionate about Full Stack Development,
+          QA Testing, and modern web technologies.
+          I enjoy building responsive applications and solving real-world problems.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="resume.pdf" class="btn btn-primary" download>
+            Download Resume
+          </a>
+
+          <a href="#contact" class="btn btn-outline">
+            Contact Me
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="hero-image">
+
+        <!-- YOUR PHOTO -->
+        <img src="img.jpeg" alt="Sanjay Photo">
+
+      </div>
+
+    </div>
+
   </section>
 
-  <section>
-    <h2>Certifications</h2>
-    <ul>
-      <li>Internshala Full Stack Program</li>
-      <li>Online Training Program onIoT</li>
-    </ul>
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about">
+
+      <p>
+        I recently completed my B.Tech in Computer Science Engineering from
+        Laxmi Devi Institute of Engineering and Technology.
+        I have knowledge of Full Stack Development, Manual Testing,
+        Automation Testing, JavaScript, Node.js, and React.
+        I completed training from Internshala and also worked as a
+        Software Developer Intern at Zentek Infosoft.
+        I am currently looking for opportunities as a Software Developer
+        or QA Engineer.
+      </p>
+
+    </div>
+
   </section>
 
-  <section>
-    <h2>Internships / Training</h2>
-    <p><strong>Software Development Intern – Zentek Infosoft</strong><br/>
-    March 2025 – June 2025<br/>
-    - Developed responsive landing pages<br/>
-    - Improved site speed by 30%</p>
+  <!-- SKILLS -->
+
+  <section id="skills">
+
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills-container">
+
+      <div class="skill-card">
+        <i class="fa-brands fa-html5"></i>
+        <h3>HTML</h3>
+      </div>
+
+      <div class="skill-card">
+        <i class="fa-brands fa-css3-alt"></i>
+        <h3>CSS</h3>
+      </div>
+
+      <div class="skill-card">
+        <i class="fa-brands fa-js"></i>
+        <h3>JavaScript</h3>
+      </div>
+
+      <div class="skill-card">
+        <i class="fa-brands fa-react"></i>
+        <h3>React</h3>
+      </div>
+
+      <div class="skill-card">
+        <i class="fa-brands fa-node-js"></i>
+        <h3>Node.js</h3>
+      </div>
+
+      <div class="skill-card">
+        <i class="fa-brands fa-java"></i>
+        <h3>java</h3>
+      </div>
+
+      <div class="skill-card">
+        <i class="fa-solid fa-vial"></i>
+        <h3>Manual Testing</h3>
+      </div>
+
+      <div class="skill-card">
+        <i class="fa-brands fa-github"></i>
+        <h3>GitHub</h3>
+      </div>
+
+    </div>
+
   </section>
 
-  <section>
-    <h2>Languages</h2>
-    <p>English – Proficient<br/>
-    Hindi – Native</p>
+  <!-- PROJECTS -->
+
+  <section id="projects">
+
+    <h2 class="section-title">Projects</h2>
+
+    <div class="projects-container">
+
+      <div class="project-card">
+
+        <h3>Portfolio Website</h3>
+
+        <p>
+          Developed a responsive modern portfolio website
+          using HTML, CSS, and JavaScript.
+        </p>
+
+        <p><strong>Tech Stack:</strong> HTML, CSS, JavaScript</p>
+
+      </div>
+
+      <div class="project-card">
+
+        <h3>Library Management System</h3>
+
+        <p>
+          Created a desktop application to manage book
+          issuance and return system.
+        </p>
+
+        <p><strong>Tech Stack:</strong> Python, SQLite</p>
+
+      </div>
+
+      <div class="project-card">
+
+        <h3>To-Do Web App</h3>
+
+        <p>
+          Built a responsive CRUD-based To-Do application
+          with Local Storage support.
+        </p>
+
+        <p><strong>Tech Stack:</strong> HTML, CSS, JavaScript</p>
+
+      </div>
+
+    </div>
+
   </section>
 
-  <section class="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:sanjaychoudhary002005@email.com">sanjaychoudhary002005@gmail.com</a></p>
-    <p>Phone: <a href="tel:+919511372508">+91-9511342508</a></p>
-    <p>LinkedIn: <a href="http://www.linkedin.com/in/sanjay-choudhary-2b910b290" target="_blank">http://www.linkedin.com/in/sanjay-choudhary-2b910b290</a></p>
-    <p>GitHub: <a href="https://github.com/dashboard" target="_blank">https://github.com/sanju091/sanjudemo</a></p>
+  <!-- EDUCATION -->
+
+  <section id="education">
+
+    <h2 class="section-title">Education</h2>
+
+    <div class="edu-card">
+
+      <h3>B.Tech - Computer Science Engineering</h3>
+
+      <p>Laxmi Devi Institute of Engineering and Technology</p>
+
+      <p>2022 - 2026</p>
+
+    </div>
+
   </section>
+
+  <!-- CONTACT -->
+
+  <section class="contact" id="contact">
+
+    <h2 class="section-title">Contact Me</h2>
+
+    <p>Email: sanjaychoudhary002005@gmail.com</p>
+
+    <p>Phone: +91 9511372508</p>
+
+    <p>
+      LinkedIn:
+      <a href="https://www.linkedin.com/in/sanjay-choudhary-2b910b290/" target="_blank">
+        linkedin.com/in/sanjay-choudhary
+      </a>
+    </p>
+
+    <p>
+      GitHub:
+      <a href="https://github.com/sanju091" target="_blank">
+        github.com/sanju091
+      </a>
+    </p>
+
+    <div class="social-icons">
+
+      <a href="https://github.com/sanju091" target="_blank">
+        <i class="fa-brands fa-github"></i>
+      </a>
+
+      <a href="https://www.linkedin.com/in/sanjay-choudhary004566/" target="_blank">
+        <i class="fa-brands fa-linkedin-in"></i>
+      </a>
+
+      <a href="mailto:sanjaychoudhary002005@gmail.com">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
 
   <footer>
-    <p>© 2025 Sanjay Choudhary. All rights reserved.</p>
+
+    <p>
+      © 2026 Sanjay Choudhary | All Rights Reserved
+    </p>
+
   </footer>
 
 </body>
 </html>
+```
